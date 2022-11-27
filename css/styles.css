@@ -4,6 +4,10 @@
   --clr-neutral-900: hsl(212, 21%, 14%);
   --clr-neutral-400: hsl(228, 12%, 48%);
   --clr-neutral-100: hsl(0, 0%, 100%);
+  ---ff-accent: 'Fraunces', serif;
+  --ff-base: 'Montserrat', sans-serif;
+  --fw-regular: 500;
+  --fw-bold: 700;
 }
 
 /*
@@ -59,11 +63,78 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-h1 {
-  font-size: 5rem;
+h1,
+h2,
+h3 {
+  line-height: 1;
 }
 
 /*
   9. Create a root stacking context
 */
+/* ====== General Styling ====== */
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  color: var(--clr-neutral-400);
+  background-color: var(--clr-secondary-200);
+  /*  For this project only */
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  margin: 1rem;
+}
+
+/*  utilities */
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/*  product styles */
+.product {
+  --content-padding: 1.5rem;
+  --content-spacing: 1rem;
+  background: var(--clr-neutral-100);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  /*  __content */
+}
+
+.product__content {
+  display: grid;
+  gap: var(--content-spacing);
+  padding: var(--content-padding);
+}
+
+.product__category {
+  font-size: 0.8125rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.product__title {
+  font-size: 2rem;
+  font-family: var(---ff-accent);
+  color: var(--clr-neutral-900);
+}
+
+.product__price {
+  font-size: 2rem;
+  font-family: var(---ff-accent);
+  color: var(--clr-primary-400);
+}
 /*# sourceMappingURL=styles.css.map */
